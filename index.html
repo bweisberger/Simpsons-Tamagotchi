@@ -10,15 +10,11 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Indie+Flower|Just+Another+Hand|Shadows+Into+Light&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-
+    <audio autoplay id="simpsons-theme" src="audio/The Simpsons.mp3"></audio>
   </head>
   <body>
-    <!-- <div id="background">
-      <img src="images/simpsons house.png" alt="Home sweet home">
-    </div> -->
-
-      <div class="container-fluid">
-        <div class="buttons-div-1 row fixed-top">
+      <div class="container-fluid stats-container">
+        <div class="stats-div-container row fixed-top">
           <div class="stats-div col-sm-2">
             <h2 id="name" class="stats">Name</h2>
           </div>
@@ -37,47 +33,79 @@
         </div>
       </div>
       <div class="selection-clouds">
-        <img class='instructions' src="images/cloud.png" alt="">
-        <img class='start-game' src="images/cloud.png" alt="">
+        <img class='instructions-img' src="images/cloud.png" alt="">
+        <h2 class='instructions-text'>Instructions</h2>
+        <img class='start-game-img' src="images/cloud.png" alt="">
+        <h2 class='start-game-text'>Start Game</h2>
       </div>
 
-          <div class="input-div">
-            <form id="enter-name" action="index.html" method="post">
-              <input type="text" id="name-input" value="Enter a name">
-              <button type="button" id="name-button">Name Your Homer</button>
-            </form>
-          </div>
-          <!-- <div class="container-fluid">
-            <div class="row"> -->
-              <div class="homer-land">
-                <img id="homer-right" src="images/homer butt scratch.gif" alt="Spinning Homer">
-              </div>
-              <div class="prancing-homer-land">
-                <img id='Prancing-homer' src="images/Prancing Homer.gif" alt="Homer Prancing to and fro">
-              </div>
-              <!-- <div class="col-sm-10 offset-sm-1 homer-land">
-                <img id="homer-left" src="images/Prancing Homer.gif" alt="Spinning Homer">
-              </div> -->
-            <!-- </div>
-          </div> -->
+      <div class="input-div">
+        <form id="enter-name" action="index.html" method="post">
+          <input type="text" id="name-input" value="Enter a name">
+          <button type="button" id="name-button">Name Your Homer</button>
+        </form>
+      </div>
 
-
-          <div class="button">
-            <div class="hungry-button">
-              <img id="hungry-button" class="img-fluid" src="images/donut.png" alt="Hungry? Have a donut!">
-              <h3>Mmmm... Donuts</h3>
+      <div id="instructions-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Homer Simpon's Day Off</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="bored-button">
-              <img id="bored-button" class="img-fluid" src="images/duff beer.png" alt="Bored? Have a beer!">
-              <h3>Go to Moe's!</h3>
+            <div class="modal-body">
+              <p>Help Homer play hooky from work! Give him beer and TV to keep him from being bored, and donuts keep him from being hungry. If he's sleepy, he should take a nap. Try to keep him happy for 8 hours without Homer reaching 10 in any characteristic!</p>
             </div>
-            <div class="sleepy-button">
-              <img id="sleepy-button" class="img-fluid" src="images/Maggie Simpson Sitting on a Pillow.png" alt="Naptime?">
-              <h3>Homer sleeepy..</h3>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
             </div>
           </div>
-      <!-- </div> -->
-    <!-- </div> -->
+        </div>
+      </div>
+
+
+      <div class="homer-land">
+        <audio loop muted id="play-game-audio" src="audio/Homer sings spanish flea (192  kbps).mp3"></audio>
+
+        <h1 id="homer-sleeping-text">Shhhh! Homer's Sleeping!</h1>
+        <h1 id="level-up-text">Level Up!</h1>
+
+        <img id="homergotchi" src="images/homer butt scratch.gif" alt="Homergotchi">
+
+        <img id="woohoo-homer" src="images/victory homer good art.gif" alt="Homer says Woohoo!">
+        <audio muted id="woohoo-audio" src="audio/Homer - Woohoo! (1).wav"></audio>
+
+        <img id="donut-homer" src="images/homer with donut.png" alt="Homer with a donut">
+        <audio muted id="donut-audio" src="audio/Homer - Mmmm, donuts (1).wav"></audio>
+
+        <audio muted id="sleepy-audio" src="audio/Cartoon-snoring.mp3"></audio>
+
+        </audio>
+
+      </div>
+      <div class="prancing-homer-land">
+        <img id='prancing-homer' src="images/Prancing Homer.gif" alt="Homer Prancing to and fro">
+      </div>
+
+
+
+      <div class="button">
+        <div class="hungry-button">
+          <img id="hungry-button" class="img-fluid" src="images/donut.png" alt="Hungry? Have a donut!">
+          <h3>Mmmm... Donuts</h3>
+        </div>
+        <div class="bored-button">
+          <img id="bored-button" class="img-fluid" src="images/duff beer.png" alt="Bored? Have a beer!">
+          <h3>Have a beer and watch TV!</h3>
+        </div>
+        <div class="sleepy-button">
+          <img id="sleepy-button" class="img-fluid" src="images/Maggie Simpson Sitting on a Pillow.png" alt="Naptime?">
+          <h3>Homer sleeepy..</h3>
+        </div>
+      </div>
+
 <footer><a href='https://ya-webdesign.com'>Arcade buttons from https://ya-webdesign.com</a></footer>
     <!-- bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
