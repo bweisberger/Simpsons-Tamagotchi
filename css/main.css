@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Simpsons';
+  src:url('../fonts/Simpsonfont.ttf');
+}
+
+*{
+  font-family: 'Simpsons';
+  border: 1px red dotted
+}
+
+.selection-clouds{
+  width: 100%;
+  overflow: hidden;
+}
+
+.selection-clouds .instructions{
+  width: 20vw;
+  position: absolute;
+  top: 6%;
+  left: 75%;
+  animation-name: instructions;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes instructions {
+  0%{top: 6%; left: 75%}
+  100%{width: 40vw; top: 30%; left: 45%}
+}
+
+.selection-clouds .start-game{
+  width: 10vw;
+  transform: scaleX(-1);
+  position: absolute;
+  top: 0%;
+  left: 3%;
+  animation-name: start-game;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes start-game {
+  0%{top: 0%; left: 3%}
+  100%{width: 40vw; top: 18%; left: 15%}
+}
+
+/* .homer-land{
+  height: 10vh;
+} */
+
+/* .homer-land #homer-right{
+  width: 30vw;
+  animation: danceRight 8s infinite;
+  animation-direction: normal;
+  position: relative;
+} */
+.homer-land{
+  position: absolute;
+  top: 12%;
+  left: 23%;
+  width: 500vw;
+}
+
+.prancing-homer-land{
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  bottom: 10%;
+}
+
+.prancing-homer-land #Prancing-homer{
+  width: 32vw;
+  animation: dance 10s linear infinite;
+  position: absolute;
+  left: -50%;
+  bottom: 0;
+  overflow: hidden;
+}
+
+@keyframes dance {
+  50%{transform: translateX(500%);}
+}
+
+@keyframes flip {
+  50%{transform: scaleX(-1);}
+}
+
+
+
+
+
+
+
+.stats{
+  color: yellow;
+  text-shadow: 2px 2px black;
+  text-align: center;
+}
+
+.button{
+  /* width: 2vw; */
+  margin: 5vh auto;
+}
+.input-div{
+  position: absolute;
+  top: 10%;
+  left: 30%;
+}
+
+.button img{
+  width: 10vw;
+  margin: 0 auto;
+  text-align: center;
+  margin: 0 10vh;
+}
+
+.hungry-button{
+  position: absolute;
+  top: 70%
+
+}
+
+.hungry-button img{
+  width: 8vw;
+}
+
+.bored-button{
+  position: absolute;
+  top: 50%
+}
+
+.bored-button img{
+  width: 8vw;
+}
+
+.sleepy-button{
+  position: absolute;
+  top: 43%;
+  left: 48%;
+}
+
+.sleep-button img{
+  width: 10vw
+}
+
+.button h3{
+  height: 2vh;
+  font-size: 4vh;
+  text-align: center;
+  color: yellow;
+  text-shadow: 2px 2px black;
+  margin: 0 0 10vh;
+}
+
+body{
+  background-image: url('../images/simpsons house.png');
+
+  background-repeat: no-repeat;
+  background-color: rgb(121, 111, 102);
+  background-size: cover;
+}
+
+footer{
+  font-size: 1vh;
+  clear: both;
+  position: absolute;
+  bottom: 0;
+}
