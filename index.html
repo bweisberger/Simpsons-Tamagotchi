@@ -10,9 +10,12 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Indie+Flower|Just+Another+Hand|Shadows+Into+Light&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <audio autoplay id="simpsons-theme" src="audio/The Simpsons.mp3"></audio>
+    <audio loop autoplay id="simpsons-theme">
+      <source src="audio/The Simpsons.mp3" type="audio/mp3" volume="60">
+    </audio>
   </head>
   <body>
+    <h1 class="title">Homer's Day Off</h1>
       <div class="container-fluid stats-container">
         <div class="stats-div-container row fixed-top">
           <div class="stats-div col-sm-2">
@@ -67,7 +70,9 @@
 
 
       <div class="homer-land">
-        <audio loop muted id="play-game-audio" src="audio/Homer sings spanish flea (192  kbps).mp3"></audio>
+        <audio loop id="play-game-audio">
+          <!-- <source src="audio/Homer sings spanish flea (192  kbps).mp3" type="audio/mp3" volume="20"> -->
+        </audio>
 
         <h1 id="homer-sleeping-text">Shhhh! Homer's Sleeping!</h1>
         <h1 id="level-up-text">Level Up!</h1>
@@ -75,13 +80,17 @@
         <img id="homergotchi" src="images/homer butt scratch.gif" alt="Homergotchi">
 
         <img id="woohoo-homer" src="images/victory homer good art.gif" alt="Homer says Woohoo!">
-        <audio muted id="woohoo-audio" src="audio/Homer - Woohoo! (1).wav"></audio>
+        <audio  id="woohoo-audio">
+          <source src="audio/Homer - Woohoo! (1).wav" type="audio/wav" volume="50">
+        </audio>
 
         <img id="donut-homer" src="images/homer with donut.png" alt="Homer with a donut">
-        <audio muted id="donut-audio" src="audio/Homer - Mmmm, donuts (1).wav"></audio>
+        <audio  id="donut-audio">
+          <source src="audio/Homer - Mmmm, donuts (1).wav" type="audio/wav" volume="50">
+        </audio>
 
-        <audio muted id="sleepy-audio" src="audio/Cartoon-snoring.mp3"></audio>
-
+        <audio  id="sleepy-audio">
+          <source src="audio/Cartoon-snoring.mp3" type="audio/mp3" volume="50">
         </audio>
 
       </div>

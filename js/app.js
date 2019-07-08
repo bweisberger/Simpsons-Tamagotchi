@@ -4,11 +4,12 @@ class Tamagotchi{
     this.hunger = 2;
     this.boredom = 2;
     this.sleepiness = 2;
-    this.age = 3;
+    this.age = 0;
     this.image = 'images/homer butt scratch.gif'
   }
 
 }
+// let timeout;/
 const game = {
   homer: '',
   $name: $('#name'),
@@ -22,7 +23,7 @@ const game = {
     this.startTimer();
   },
   startTimer: function(){
-    let count = 50
+    let count = 0
 
     const timer = setInterval(function(){
       count++;
@@ -60,8 +61,7 @@ const game = {
     }, 1000);
   },
   displayStats: function(){
-
-    $('#age').text(`${this.homer.age} hours free`);
+    $('#age').text(`${this.homer.age} happy hours passed.`);
     $('#name').text(`${this.homer.name} Simpson`);
     $('#hunger').text(`Hunger ${this.homer.hunger}`);
     $('#sleepiness').text(`Sleepiness ${this.homer.sleepiness}`);
@@ -77,7 +77,7 @@ const game = {
       $('#boredom').show();
       $('.button').show();
       $('.homer-land').show();
-      $('#simpsons-theme')[0].pause();
+      $('.title').hide();
       $('.prancing-homer-land').hide();
       $('.selection-clouds').hide();
       $('body').css('background-image', 'url("images/living room adult swim.jpg")');
@@ -102,6 +102,7 @@ $('.hungry-button').click(function(e){
     $('#homer-sleeping-text').show();
   }
   else if ($(e.target).attr('id') == 'hungry-button'){
+    // clearTimeout(timeout)
     if (game.homer.hunger >= 2){
     game.homer.hunger -= 2;
     game.homer.sleepiness++;
@@ -120,12 +121,13 @@ $('.bored-button').click(function(e){
     $('#homer-sleeping-text').show();
   }
   else if ($(e.target).attr('id') == 'bored-button'){
+    // clearTimeout(timeout);
     if (game.homer.boredom >= 2){
     game.homer.boredom -= 2;
     game.homer.sleepiness++;
     $('#woohoo-homer').show();
     $('#woohoo-audio')[0].play();
-    setTimeout(function(){
+    const timeout = setTimeout(function(){
       $('#woohoo-homer').hide();
     },2000)
     game.displayStats();
@@ -140,9 +142,9 @@ $('.sleepy-button').click(function(e){
     game.displayStats();
     $('#homergotchi').attr('src', 'images/sleeping homer.gif');
     $('#homergotchi').css({'top': '50%', 'left':'28%'})
-    $('#sleepy-audio').play();
+    $('#sleepy-audio')[0].play();
     const sleepTimer = setTimeout(function(){
-      $('#sleepy-audio').pause();
+      $('#sleepy-audio')[0].pause();
       $('#homer-sleeping-text').hide();
       $('#homergotchi').attr('src', game.homer.image);
 
@@ -169,6 +171,7 @@ $('.start-game-text').on('click', function(){
 });
 //when the document is ready
 $(document).ready(function(){
+  // $('#simpsons-theme')[0].play();
   //grab the input field
   const $input = $('#name-input');
   //if focused on, clear 'Enter a name'
@@ -177,12 +180,12 @@ $(document).ready(function(){
       this.value = '';
     }
   });
-  document.querySelector('#simpsons-theme').play();
   game.showGame(false);
   $('#name-button').click(function(e){
     const name = $('#name-input').val();
     // console.log(name);
     game.startGame(name);
+    $('#simpsons-theme')[0].pause();
     game.showGame(true);
     $('.input-div').hide()
     $input.val("");
@@ -193,6 +196,7 @@ $(document).ready(function(){
     const name = $('#name-input').val();
     // console.log(name);
     game.startGame(name);
+    $('#simpsons-theme')[0].pause();
     game.showGame(true);
     $('.input-div').hide()
     $input.val("");
