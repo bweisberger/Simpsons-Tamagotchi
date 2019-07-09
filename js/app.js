@@ -37,12 +37,12 @@ const game = {
       if (count % 5 == 0){
         game.homer.sleepiness++
       }
-      if (count % 15 == 0){
+      if (count % 9 == 0){
         game.homer.age++
       }
       game.displayStats()
       //transform homer at 60 seconds
-      if (count == 60){
+      if (count == 36){
         $('#level-up-text').show();
         $('#homergotchi').css({'width': '50vw'});
         $('#homergotchi').attr('src', 'images/transforming homer.gif');
@@ -69,7 +69,7 @@ const game = {
   },
   showGame: function(boolean){
     if (boolean) {
-      $('#play-game-audio')[0].play();
+      $('#background-music').attr('src','audio/Homer sings spanish flea (192  kbps).mp3')
       $('#age').show();
       $('#name').show();
       $('#hunger').show();
@@ -185,7 +185,7 @@ $(document).ready(function(){
     const name = $('#name-input').val();
     // console.log(name);
     game.startGame(name);
-    $('#simpsons-theme')[0].pause();
+    // $('#simpsons-theme')[0].pause();
     game.showGame(true);
     $('.input-div').hide()
     $input.val("");
@@ -196,7 +196,7 @@ $(document).ready(function(){
     const name = $('#name-input').val();
     // console.log(name);
     game.startGame(name);
-    $('#simpsons-theme')[0].pause();
+    // $('#simpsons-theme')[0].pause();
     game.showGame(true);
     $('.input-div').hide()
     $input.val("");
